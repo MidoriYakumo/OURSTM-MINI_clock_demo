@@ -1,0 +1,104 @@
+
+#include "stm32f10x.h"
+#include "stm32f10x_it.h"
+
+#include "lcd_driver.h"
+
+void Delay(__IO uint32_t nCount);
+
+
+#define DUMMY Delay(11345678)
+#define LDUMMY {DUMMY;DUMMY;DUMMY;DUMMY;}
+
+
+#include "res.h"
+#include "painter.h"
+
+//res_string_0/*_FSTR_0*/
+
+extern DrawLineContext _d_dl_ctx;
+
+int main(){
+
+	LCD_Cmd_InitFSMC();
+	LCD_Cmd_Init();
+	LCD_Cmd_InitBacklight();
+
+	u16 x, y, i;
+	s16 a, b, c;
+	u32 t;
+
+
+	Painter_SetupContextBitmask(240, 320, 0);
+
+	for (x=0;x<240;x++) for (y=0;y<320;y++){
+		t = (x-120)*(x-120)+(y-120)*(y-120);
+		if ((t<50*50)) LCD_SetBitMask(_d_dl_ctx.bm, x, y, 240);
+	}
+
+	while (1){
+		LCD_FillRectangle_RGB4444(0, 0, 240, 320, 0x888f);
+		LCD_FillCircle_RGB4444(120, 120, 50, 0xe16f);
+	for (a=1;a<10;a++){
+		Painter_Fill_BitMaskShadow(50, 50, 200, 200, 0L, 50, 50, 240, 0x000c, a, a, 15);
+//		DUMMY;
+	}
+
+	for (i=1;i<=50;i++){
+		LCD_FillCircle_RGB4444(120, 120, i, 0x9143);
+	}
+	LCD_FillCircle_RGB4444(120, 120, i, 0x914f);
+
+	for (a=15;a>0;a--){
+		Painter_Fill_BitMaskShadow(50, 50, 200, 200, 0L, 50, 50, 240, 0x888f, a, a, -15);
+		//		DUMMY;
+	}
+
+	for (i=1;i<=50;i++){
+		LCD_FillCircle_RGB4444(120, 120, i, 0xe16f);
+	}
+	LCD_FillCircle_RGB4444(120, 120, i, 0xe16f);
+	}
+
+	return 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+/**
+ * @brief  Inserts a delay time.
+ * @param  nCount: specifies the delay time length.
+ * @retval None
+ */
+void Delay(__IO uint32_t nCount)
+{
+	for(; nCount != 0; nCount--);
+}
+
+#ifdef  USE_FULL_ASSERT
+
+/**
+ * @brief  Reports the name of the source file and the source line number
+ *         where the assert_param error has occurred.
+ * @param  file: pointer to the source file name
+ * @param  line: assert_param error line source number
+ * @retval None
+ */
+void assert_failed(uint8_t* file, uint32_t line)
+{
+	// Flash Hall LEDs and send the message
+	/* Infinite loop, flashing LEDs */
+	while (1)
+	{
+	}
+}
+
+#endif
