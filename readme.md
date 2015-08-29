@@ -2,7 +2,7 @@
 ====
 A demo of better UI running on STM32F103 for ILI9325/8080 LCD interface.
 
-Works on 奋斗STM32-MINI [http://ourstm.taobao.com][] in 34fps
+Works on 奋斗STM32-MINI [http://ourstm.taobao.com][] in 34fps(with shadow off)
 
 ![clock](res/clock.gif)
 
