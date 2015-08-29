@@ -127,10 +127,7 @@ void PendSV_Handler(void)
 {
 }
 
-<<<<<<< 4bfa93fd6705874416f16ac5d9d2dbfb2df07cae
 extern __IO u32 _sys_tick;
-=======
->>>>>>> 1st commit
 /**
   * @brief  This function handles SysTick Handler.
   * @param  None
@@ -138,12 +135,9 @@ extern __IO u32 _sys_tick;
   */
 void SysTick_Handler(void)
 {
-<<<<<<< 4bfa93fd6705874416f16ac5d9d2dbfb2df07cae
 	_sys_tick++;
 	if ((_sys_tick / 1000)&1) GPIO_SetBits(GPIOB, GPIO_Pin_5);
 	else GPIO_ResetBits(GPIOB, GPIO_Pin_5);
-=======
->>>>>>> 1st commit
 }
 
 /******************************************************************************/

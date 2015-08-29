@@ -2,12 +2,8 @@
 SRC = $(wildcard *.c)
 SRC += syscall_mini.c
 SRC += stm32f10x_gpio.c stm32f10x_rcc.c
-<<<<<<< 4bfa93fd6705874416f16ac5d9d2dbfb2df07cae
 SRC += stm32f10x_fsmc.c
 # SRC += stm32f10x_tim.c
-=======
-SRC += stm32f10x_fsmc.c stm32f10x_tim.c
->>>>>>> 1st commit
 
 # build options
 # debug build?
@@ -107,13 +103,8 @@ build: obj_std
 res.c: pre-resource
 
 pre-resource:
-<<<<<<< 4bfa93fd6705874416f16ac5d9d2dbfb2df07cae
 # 	echo '#include <stdint.h>' > res.c
 # 	echo '#include <stdint.h>' > res.h
-=======
-#	echo '#include <stdint.h>' > res.c
-#	echo '#include <stdint.h>' > res.h
->>>>>>> 1st commit
 	./cvt_font.py
 	./cvt_image.py
 

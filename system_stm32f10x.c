@@ -108,20 +108,12 @@
  #define SYSCLK_FREQ_24MHz  24000000
 #else
 /* #define SYSCLK_FREQ_HSE    HSE_VALUE */
-<<<<<<< 4bfa93fd6705874416f16ac5d9d2dbfb2df07cae
 /* #define SYSCLK_FREQ_24MHz  24000000 */
 /* #define SYSCLK_FREQ_36MHz  36000000 */
 /* #define SYSCLK_FREQ_48MHz  48000000 */
 /* #define SYSCLK_FREQ_56MHz  56000000 */
 //#define SYSCLK_FREQ_72MHz  72000000
 #define SYSCLK_FREQ_128MHz  128000000
-=======
-/* #define SYSCLK_FREQ_24MHz  24000000 */ 
-/* #define SYSCLK_FREQ_36MHz  36000000 */
-/* #define SYSCLK_FREQ_48MHz  48000000 */
-/* #define SYSCLK_FREQ_56MHz  56000000 */
-#define SYSCLK_FREQ_72MHz  72000000
->>>>>>> 1st commit
 #endif
 
 /*!< Uncomment the following line if you need to use external SRAM mounted
@@ -169,11 +161,8 @@
   uint32_t SystemCoreClock         = SYSCLK_FREQ_56MHz;        /*!< System Clock Frequency (Core Clock) */
 #elif defined SYSCLK_FREQ_72MHz
   uint32_t SystemCoreClock         = SYSCLK_FREQ_72MHz;        /*!< System Clock Frequency (Core Clock) */
-<<<<<<< 4bfa93fd6705874416f16ac5d9d2dbfb2df07cae
 #elif defined SYSCLK_FREQ_128MHz
   uint32_t SystemCoreClock         = SYSCLK_FREQ_128MHz;        /*!< System Clock Frequency (Core Clock) */
-=======
->>>>>>> 1st commit
 #else /*!< HSI Selected as System Clock source */
   uint32_t SystemCoreClock         = HSI_VALUE;        /*!< System Clock Frequency (Core Clock) */
 #endif
@@ -201,11 +190,8 @@ static void SetSysClock(void);
   static void SetSysClockTo56(void);  
 #elif defined SYSCLK_FREQ_72MHz
   static void SetSysClockTo72(void);
-<<<<<<< 4bfa93fd6705874416f16ac5d9d2dbfb2df07cae
 #elif defined SYSCLK_FREQ_128MHz
   static void SetSysClockTo128(void);
-=======
->>>>>>> 1st commit
 #endif
 
 #ifdef DATA_IN_ExtSRAM
@@ -449,11 +435,8 @@ static void SetSysClock(void)
   SetSysClockTo56();  
 #elif defined SYSCLK_FREQ_72MHz
   SetSysClockTo72();
-<<<<<<< 4bfa93fd6705874416f16ac5d9d2dbfb2df07cae
 #elif defined SYSCLK_FREQ_128MHz
   SetSysClockTo128();
-=======
->>>>>>> 1st commit
 #endif
  
  /* If none of the define above is enabled, the HSI is used as System clock
@@ -1049,11 +1032,7 @@ static void SetSysClockTo72(void)
     RCC->CFGR |= (uint32_t)RCC_CFGR_PPRE2_DIV1;
     
     /* PCLK1 = HCLK */
-<<<<<<< 4bfa93fd6705874416f16ac5d9d2dbfb2df07cae
 	RCC->CFGR |= (uint32_t)RCC_CFGR_PPRE1_DIV2;
-=======
-    RCC->CFGR |= (uint32_t)RCC_CFGR_PPRE1_DIV2;
->>>>>>> 1st commit
 
 #ifdef STM32F10X_CL
     /* Configure PLLs ------------------------------------------------------*/
@@ -1080,13 +1059,8 @@ static void SetSysClockTo72(void)
 #else    
     /*  PLL configuration: PLLCLK = HSE * 9 = 72 MHz */
     RCC->CFGR &= (uint32_t)((uint32_t)~(RCC_CFGR_PLLSRC | RCC_CFGR_PLLXTPRE |
-<<<<<<< 4bfa93fd6705874416f16ac5d9d2dbfb2df07cae
 										RCC_CFGR_PLLMULL));
 	RCC->CFGR |= (uint32_t)(RCC_CFGR_PLLSRC_HSE | RCC_CFGR_PLLMULL9);
-=======
-                                        RCC_CFGR_PLLMULL));
-    RCC->CFGR |= (uint32_t)(RCC_CFGR_PLLSRC_HSE | RCC_CFGR_PLLMULL9);
->>>>>>> 1st commit
 #endif /* STM32F10X_CL */
 
     /* Enable PLL */
@@ -1111,7 +1085,6 @@ static void SetSysClockTo72(void)
          configuration. User can add here some code to deal with this error */
   }
 }
-<<<<<<< 4bfa93fd6705874416f16ac5d9d2dbfb2df07cae
 #elif defined SYSCLK_FREQ_128MHz
 /**
   * @brief  Sets System clock frequency to 128MHz and configure HCLK, PCLK2
@@ -1190,8 +1163,6 @@ static void SetSysClockTo128(void)
 		 configuration. User can add here some code to deal with this error */
 	}
 }
-=======
->>>>>>> 1st commit
 #endif
 
 /**

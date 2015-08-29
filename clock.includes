@@ -1,18 +1,10 @@
-<<<<<<< 4bfa93fd6705874416f16ac5d9d2dbfb2df07cae
 /home/macrobull/workspace/Embedded/STM32/MINI-demo_clock
-=======
-/home/macrobull/workspace/Embedded/STM32/MINI-Clock
->>>>>>> 1st commit
 /home/macrobull/workspace/lib-external/c/stm32/STM32F10x_StdPeriph_Lib_V3.5.0/Libraries/CMSIS/Include/
 /home/macrobull/workspace/lib-external/c/stm32/STM32F10x_StdPeriph_Lib_V3.5.0/Libraries/CMSIS/CM3/CoreSupport/
 /home/macrobull/workspace/lib-external/c/stm32/STM32F10x_StdPeriph_Lib_V3.5.0/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/
 /home/macrobull/workspace/lib-external/c/stm32/STM32F10x_StdPeriph_Lib_V3.5.0/Libraries/STM32F10x_StdPeriph_Driver/inc/
 /home/macrobull/workspace/lib-macrobull/c/stm32/inc/
-<<<<<<< 4bfa93fd6705874416f16ac5d9d2dbfb2df07cae
 /home/macrobull/workspace/Embedded/STM32/MINI-demo_clock
-=======
-/home/macrobull/workspace/Embedded/STM32/MINI-Clock
->>>>>>> 1st commit
 /home/macrobull/workspace/lib-external/c/stm32/STM32F10x_StdPeriph_Lib_V3.5.0/Libraries/CMSIS/CM3/CoreSupport/
 /home/macrobull/workspace/lib-external/c/stm32/STM32F10x_StdPeriph_Lib_V3.5.0/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/
 /home/macrobull/workspace/lib-external/c/stm32/STM32F10x_StdPeriph_Lib_V3.5.0/Libraries/STM32F10x_StdPeriph_Driver/src/
